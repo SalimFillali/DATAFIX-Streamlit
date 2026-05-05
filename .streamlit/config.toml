@@ -1,0 +1,15 @@
+[theme]
+# Thème DATAFIX – inspiré du logo (noir cinéma + jaune doré)
+base = "dark"
+primaryColor = "#F5C518"           # jaune DATAFIX (or cinéma / IMDb-like)
+backgroundColor = "#0E0E10"        # noir profond
+secondaryBackgroundColor = "#1A1A1D"
+textColor = "#F5F5F5"
+font = "sans serif"
+
+[server]
+headless = true
+runOnSave = true
+
+[browser]
+gatherUsageStats = false

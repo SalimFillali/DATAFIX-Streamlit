@@ -1,0 +1,41 @@
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Environnements virtuels ------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+
+# --- IDE --------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# --- Streamlit --------------------------------------------------------------
+.streamlit/secrets.toml
+
+# --- Données volumineuses ---------------------------------------------------
+# On versionne le code mais PAS les gros datasets.
+data/*.csv
+data/*.parquet
+data/*.xlsx
+!data/.gitkeep
+
+# --- Notebooks Jupyter ------------------------------------------------------
+.ipynb_checkpoints/
+
+# --- Logs / temp -----------------------------------------------------------
+*.log
+*.tmp
+.cache/

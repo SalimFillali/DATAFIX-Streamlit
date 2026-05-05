@@ -31,64 +31,36 @@ st.markdown(
 )
 
 st.write("")
-
-# --- Scrum Master --------------------------------------------------- #
-st.markdown("### 🧭 Scrum Master")
-scrum_l, scrum_c, scrum_r = st.columns([1, 2, 1])
-with scrum_c:
-    st.markdown(
-        """<div class="datafix-card" style="border-left: 4px solid #F5C518; text-align:center;">
-          <div class="datafix-card-icon">🎬</div>
-          <div class="datafix-card-title">Romain</div>
-          <div class="datafix-card-text">
-            <strong>Scrum Master</strong><br>
-            Coordination des sprints, animation des cérémonies agiles,
-            facilitation et suppression des obstacles.
-          </div>
-        </div>""",
-        unsafe_allow_html=True,
-    )
-
 st.write("")
-st.divider()
 
-# --- Product Owner -------------------------------------------------- #
-st.markdown("### 🎯 Product Owner")
-po_l, po_c, po_r = st.columns([1, 2, 1])
-with po_c:
-    st.markdown(
-        """<div class="datafix-card" style="border-left: 4px solid #F5C518; text-align:center;">
-          <div class="datafix-card-icon">📋</div>
-          <div class="datafix-card-title">Salim</div>
-          <div class="datafix-card-text">
-            <strong>Product Owner</strong><br>
-            Vision produit, priorisation du backlog, lien avec le client,
-            arbitrage des choix fonctionnels.
-          </div>
-        </div>""",
-        unsafe_allow_html=True,
-    )
-
+# --- L'équipe : 5 personnes, traitées équitablement ----------------- #
+st.subheader("L'équipe")
 st.write("")
-st.divider()
-
-# --- Équipe Data ---------------------------------------------------- #
-st.markdown("### 👥 L'équipe Data")
-e1, e2, e3 = st.columns(3, gap="medium")
 
 team = [
-    ("Gatien", "Code Reviewer", "Revue de code, qualité, bonnes pratiques, intégration."),
-    ("Jade", "Team Member", "Mots-clés, NLP, enrichissement du dataset."),
-    ("Liliana", "Team Member", "Distribution, visualisations, analyses."),
+    ("Romain",   "Scrum Master",   "Coordination des sprints et animation des cérémonies agiles."),
+    ("Salim",    "Product Owner",  "Vision produit, priorisation du backlog et lien avec le client."),
+    ("Gatien",   "Code Reviewer",  "Revue de code, qualité, bonnes pratiques et intégration."),
+    ("Jade",     "Team Member",    "Mots-clés, NLP et enrichissement du dataset."),
+    ("Liliana",  "Team Member",    "Distribution, visualisations et analyses."),
 ]
 
-for col, (name, role, mission) in zip([e1, e2, e3], team):
+# Affichage en 5 colonnes égales
+cols = st.columns(5, gap="medium")
+for col, (name, role, mission) in zip(cols, team):
+    photo_path = ASSETS / f"photo_{name.lower()}.png"
     with col:
+        # Photo centrée en haut de la carte
+        if photo_path.exists():
+            sub = st.columns([1, 3, 1])
+            with sub[1]:
+                st.image(str(photo_path), use_container_width=True)
+        # Carte texte cohérente avec l'identité visuelle
         st.markdown(
-            f"""<div class="datafix-card">
-              <div class="datafix-card-icon">🎬</div>
-              <div class="datafix-card-title">{name}</div>
-              <div class="datafix-card-text"><strong>{role}</strong><br>{mission}</div>
+            f"""<div class="datafix-card-clean" style="text-align:center; margin-top:0.5rem;">
+              <div class="num">{role.upper()}</div>
+              <div class="title">{name}</div>
+              <div class="text">{mission}</div>
             </div>""",
             unsafe_allow_html=True,
         )
@@ -96,7 +68,8 @@ for col, (name, role, mission) in zip([e1, e2, e3], team):
 st.write("")
 st.divider()
 
-st.markdown("### 🧭 Notre méthode")
+# --- Notre méthode -------------------------------------------------- #
+st.subheader("Notre méthode")
 st.markdown(
     """
 1. **Comprendre le besoin.** Interviews client, étude de marché du cinéma rural en Creuse.
@@ -109,43 +82,43 @@ st.markdown(
     """
 )
 
-st.markdown("### 🎯 Critères de sélection du catalogue")
+st.subheader("Critères de sélection du catalogue")
 st.markdown(
     """
-- 🥖 **Production française.** Pour ancrer le cinéma dans son territoire.
-- 📅 **Sortie après 1980.** Un cinéma vivant qui parle aux générations actuelles.
-- 🎭 **Genre comédie.** La comédie rassemble toutes les générations en zone rurale.
-- ⭐ **Note ≥ 6.5/10 sur TMDB.** Gage de qualité, validé par des dizaines de milliers de spectateurs.
+- **Production française.** Pour ancrer le cinéma dans son territoire.
+- **Sortie après 1980.** Un cinéma vivant qui parle aux générations actuelles.
+- **Genre comédie.** La comédie rassemble toutes les générations en zone rurale.
+- **Note ≥ 6.5/10 sur TMDB.** Gage de qualité, validé par des dizaines de milliers de spectateurs.
     """
 )
 
 st.divider()
-st.markdown("### 🛠️ Stack technique")
+st.subheader("Stack technique")
 s1, s2, s3 = st.columns(3, gap="large")
 with s1:
     st.markdown(
-        """<div class="datafix-card">
-          <div class="datafix-card-icon">🐍</div>
-          <div class="datafix-card-title">Python · Pandas</div>
-          <div class="datafix-card-text">Manipulation des données, fusion des sources IMDb et TMDB.</div>
+        """<div class="datafix-card-clean">
+          <div class="num">01 / Données</div>
+          <div class="title">Python · Pandas</div>
+          <div class="text">Manipulation des données, fusion des sources IMDb et TMDB.</div>
         </div>""",
         unsafe_allow_html=True,
     )
 with s2:
     st.markdown(
-        """<div class="datafix-card">
-          <div class="datafix-card-icon">🤖</div>
-          <div class="datafix-card-title">scikit-learn</div>
-          <div class="datafix-card-text">TF-IDF et similarité cosinus pour le moteur de recommandation.</div>
+        """<div class="datafix-card-clean">
+          <div class="num">02 / Modèle</div>
+          <div class="title">scikit-learn</div>
+          <div class="text">TF-IDF et similarité cosinus pour le moteur de recommandation.</div>
         </div>""",
         unsafe_allow_html=True,
     )
 with s3:
     st.markdown(
-        """<div class="datafix-card">
-          <div class="datafix-card-icon">🎬</div>
-          <div class="datafix-card-title">Streamlit · TMDB API</div>
-          <div class="datafix-card-text">Interface multipage et affiches officielles en temps réel.</div>
+        """<div class="datafix-card-clean">
+          <div class="num">03 / Interface</div>
+          <div class="title">Streamlit · TMDB API</div>
+          <div class="text">Interface multipage et affiches officielles en temps réel.</div>
         </div>""",
         unsafe_allow_html=True,
     )

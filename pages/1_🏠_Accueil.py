@@ -1,7 +1,7 @@
 """Page Accueil - DATAFIX."""
 from pathlib import Path
 import streamlit as st
-from utils.theme import inject_global_css, hero_header
+from utils.theme import inject_global_css
 
 st.set_page_config(page_title="DATAFIX – Accueil", page_icon="🏠", layout="wide")
 inject_global_css()
@@ -14,10 +14,21 @@ with st.sidebar:
         st.image(str(LOGO), use_container_width=True)
     st.caption("v0.2 · Sprint 4 · 2026")
 
-hero_header(
-    title="DATAFIX",
-    subtitle="La comédie française, sublimée par la data.",
-)
+# --- HERO : grand logo image (identique à app.py) ------------------- #
+hero_l, hero_c, hero_r = st.columns([1, 2, 1])
+with hero_c:
+    if LOGO.exists():
+        st.image(str(LOGO), use_container_width=True)
+    st.markdown(
+        """<div style="text-align:center; color:#9A9AA0; font-size:1.15rem; margin-top:-0.5rem;">
+            La comédie française, sublimée par la data.
+        </div>
+        <div style="width:84px; height:4px; background:#F5C518; border-radius:4px; margin: 1rem auto 0;"></div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+st.write("")
 
 st.markdown(
     """<div class="datafix-tagline">

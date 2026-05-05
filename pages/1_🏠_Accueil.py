@@ -22,10 +22,9 @@ hero_header(
 st.markdown(
     """<div class="datafix-tagline">
         DATAFIX accompagne le futur cinéma de la <strong>Creuse</strong> avec
-        un moteur de recommandation spécialisé en <strong>comédie française
-        post-1980</strong> (note ≥ 6.5/10). De <em>La Boum</em> à
-        <em>Hors normes</em>, en passant par les <em>Visiteurs</em> et
-        <em>OSS 117</em>, retrouvez la quintessence du rire à la française.
+        un moteur de recommandation dédié aux meilleures
+        <strong>comédies françaises</strong>. Découvrez des films cultes et
+        trouvez facilement votre prochaine séance idéale.
     </div>""",
     unsafe_allow_html=True,
 )

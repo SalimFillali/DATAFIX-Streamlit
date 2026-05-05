@@ -51,12 +51,10 @@ st.write("")
 st.markdown(
     """
     <div class="datafix-tagline">
-        Bienvenue dans l'application de recommandation conçue pour le futur cinéma
-        de la <strong>Creuse</strong>. Notre catalogue est ciblé sur la
-        <strong>comédie française post-1980</strong>, avec uniquement des films
-        notés <strong>6.5/10 ou plus</strong>. D'<em>Intouchables</em> à
-        <em>Astérix</em>, en passant par <em>Amélie Poulain</em> et le
-        <em>Dîner de cons</em>, retrouvez la quintessence du rire à la française.
+        DATAFIX accompagne le futur cinéma de la <strong>Creuse</strong> avec
+        un moteur de recommandation dédié aux meilleures
+        <strong>comédies françaises</strong>. Découvrez des films cultes et
+        trouvez facilement votre prochaine séance idéale.
     </div>
     """,
     unsafe_allow_html=True,
@@ -71,7 +69,7 @@ with col1:
             <div class="datafix-card-icon">🥖</div>
             <div class="datafix-card-title">100% comédie française</div>
             <div class="datafix-card-text">
-                Catalogue trié sur le volet : uniquement des comédies françaises
+                Catalogue trié sur le volet, uniquement des comédies françaises
                 sorties <strong>après 1980</strong>, avec une note minimale de
                 <strong>6.5/10</strong>.
             </div>

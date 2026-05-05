@@ -16,16 +16,16 @@ with st.sidebar:
 
 hero_header(
     title="DATAFIX",
-    subtitle="La comedie francaise, sublimee par la data.",
+    subtitle="La comédie française, sublimée par la data.",
 )
 
 st.markdown(
     """<div class="datafix-tagline">
-        DATAFIX accompagne le futur cinema de la <strong>Creuse</strong> avec
-        un moteur de recommandation specialise en <strong>comedie francaise
-        post-1980</strong> (note ≥ 6.5/10). De <em>La Boum</em> a
+        DATAFIX accompagne le futur cinéma de la <strong>Creuse</strong> avec
+        un moteur de recommandation spécialisé en <strong>comédie française
+        post-1980</strong> (note ≥ 6.5/10). De <em>La Boum</em> à
         <em>Hors normes</em>, en passant par les <em>Visiteurs</em> et
-        <em>OSS 117</em>, retrouvez la quintessence du rire a la francaise.
+        <em>OSS 117</em>, retrouvez la quintessence du rire à la française.
     </div>""",
     unsafe_allow_html=True,
 )
@@ -38,11 +38,11 @@ with c1:
     st.markdown(
         """<div class="datafix-card">
           <div class="datafix-card-icon">🎯</div>
-          <div class="datafix-card-title">Recommander une comedie</div>
+          <div class="datafix-card-title">Recommander une comédie</div>
           <div class="datafix-card-text">
-            Choisissez <em>Intouchables</em>, <em>Amelie Poulain</em>,
-            <em>Asterix</em>… et obtenez 8 comedies francaises proches,
-            avec affiches et synopsis officiels.
+            Choisissez <em>Intouchables</em>, <em>Amélie Poulain</em>,
+            <em>Astérix</em>… vous obtenez instantanément 8 comédies françaises
+            proches, avec leurs affiches et synopsis officiels.
           </div>
         </div>""",
         unsafe_allow_html=True,
@@ -53,8 +53,8 @@ with c2:
           <div class="datafix-card-icon">📊</div>
           <div class="datafix-card-title">Explorer le catalogue FR</div>
           <div class="datafix-card-text">
-            30 comedies francaises iconiques, toutes notees ≥ 6.5/10.
-            Repartition par decennie, classement, top des mieux notes.
+            30 comédies françaises iconiques, toutes notées 6.5/10 ou plus.
+            Répartition par décennie, classement, top des mieux notées.
           </div>
         </div>""",
         unsafe_allow_html=True,
@@ -63,15 +63,15 @@ with c3:
     st.markdown(
         """<div class="datafix-card">
           <div class="datafix-card-icon">ℹ️</div>
-          <div class="datafix-card-title">A propos</div>
+          <div class="datafix-card-title">À propos</div>
           <div class="datafix-card-text">
-            Decouvrez l'equipe DATAFIX, la methodologie de selection et la
-            stack (Python · scikit-learn · Streamlit · TMDB).
+            Découvrez l'équipe DATAFIX, la méthodologie de sélection et la
+            stack technique (Python, scikit-learn, Streamlit, TMDB).
           </div>
         </div>""",
         unsafe_allow_html=True,
     )
 
 st.write("")
-if st.button("🎬 Demarrer une recommandation", use_container_width=True, type="primary"):
+if st.button("🎬 Démarrer une recommandation", use_container_width=True, type="primary"):
     st.switch_page("pages/2_🎯_Recommandation.py")

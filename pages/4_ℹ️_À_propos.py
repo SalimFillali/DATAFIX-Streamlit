@@ -3,7 +3,7 @@ from pathlib import Path
 import streamlit as st
 from utils.theme import inject_global_css, hero_header
 
-st.set_page_config(page_title="DATAFIX – A propos", page_icon="ℹ️", layout="wide")
+st.set_page_config(page_title="DATAFIX – À propos", page_icon="ℹ️", layout="wide")
 inject_global_css()
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
@@ -12,20 +12,20 @@ LOGO = ASSETS / "logo.png"
 with st.sidebar:
     if LOGO.exists():
         st.image(str(LOGO), use_container_width=True)
-    st.caption("L'equipe & la methodo")
+    st.caption("L'équipe et la méthodo")
 
 hero_header(
-    title="A <span class='accent-text'>propos</span>",
-    subtitle="L'equipe DATAFIX & sa methode.",
+    title="À <span class='accent-text'>propos</span>",
+    subtitle="L'équipe DATAFIX et sa méthode.",
 )
 
 st.markdown(
     """<div class="datafix-tagline">
-        <strong>DATAFIX</strong> est un projet pedagogique mene dans le cadre
-        de la formation Data Analyst. L'objectif : livrer un outil operationnel
-        a un futur cinema independant en Creuse, avec un positionnement editorial
-        affirme — la <strong>comedie francaise post-1980</strong>, selectionnee
-        sur la qualite (note TMDB ≥ 6.5/10).
+        <strong>DATAFIX</strong> est un projet pédagogique mené dans le cadre
+        de la formation Data Analyst. L'objectif : livrer un outil opérationnel
+        à un futur cinéma indépendant en Creuse, avec un positionnement éditorial
+        affirmé. Notre choix : la <strong>comédie française post-1980</strong>,
+        sélectionnée sur la qualité (note TMDB ≥ 6.5/10).
     </div>""",
     unsafe_allow_html=True,
 )
@@ -42,7 +42,7 @@ with scrum_c:
           <div class="datafix-card-title">Romain</div>
           <div class="datafix-card-text">
             <strong>Scrum Master</strong><br>
-            Coordination des sprints, animation des ceremonies agiles,
+            Coordination des sprints, animation des cérémonies agiles,
             facilitation et suppression des obstacles.
           </div>
         </div>""",
@@ -73,13 +73,13 @@ st.write("")
 st.divider()
 
 # --- Équipe Data ---------------------------------------------------- #
-st.markdown("### 👥 L'equipe Data")
+st.markdown("### 👥 L'équipe Data")
 e1, e2, e3 = st.columns(3, gap="medium")
 
 team = [
-    ("Gatien", "Code Reviewer", "Revue de code, qualite, bonnes pratiques, integration"),
-    ("Jade", "Team Member", "Mots-cles, NLP, enrichissement du dataset"),
-    ("Liliana", "Team Member", "Distribution, visualisations, analyses"),
+    ("Gatien", "Code Reviewer", "Revue de code, qualité, bonnes pratiques, intégration."),
+    ("Jade", "Team Member", "Mots-clés, NLP, enrichissement du dataset."),
+    ("Liliana", "Team Member", "Distribution, visualisations, analyses."),
 ]
 
 for col, (name, role, mission) in zip([e1, e2, e3], team):
@@ -96,26 +96,26 @@ for col, (name, role, mission) in zip([e1, e2, e3], team):
 st.write("")
 st.divider()
 
-st.markdown("### 🧭 Notre methode")
+st.markdown("### 🧭 Notre méthode")
 st.markdown(
     """
-1. **Comprendre le besoin** — interviews client, etude de marche du cinema rural en Creuse.
-2. **Definir le positionnement editorial** — comedie francaise post-1980, qualite ≥ 6.5/10.
-3. **Collecter les donnees** — IMDb (titres, notes) + TMDB (affiches, synopsis, genres).
-4. **Nettoyer & filtrer** — fusion `tconst` ↔ `tmdb_id`, application des criteres metier.
-5. **Modeliser** — TF-IDF (FR) sur genres + synopsis, similarite cosinus.
-6. **Prototyper** — maquette Figma puis application Streamlit.
-7. **Livrer** — demonstration au client + documentation reproductible.
+1. **Comprendre le besoin.** Interviews client, étude de marché du cinéma rural en Creuse.
+2. **Définir le positionnement éditorial.** Comédie française post-1980, qualité ≥ 6.5/10.
+3. **Collecter les données.** IMDb (titres, notes) et TMDB (affiches, synopsis, genres).
+4. **Nettoyer et filtrer.** Fusion `tconst` ↔ `tmdb_id`, application des critères métier.
+5. **Modéliser.** TF-IDF (FR) sur genres et synopsis, similarité cosinus.
+6. **Prototyper.** Maquette Figma puis application Streamlit.
+7. **Livrer.** Démonstration au client, documentation reproductible.
     """
 )
 
-st.markdown("### 🎯 Criteres de selection du catalogue")
+st.markdown("### 🎯 Critères de sélection du catalogue")
 st.markdown(
     """
-- 🥖 **Production francaise** — pour ancrer le cinema dans son territoire.
-- 📅 **Sortie apres 1980** — un cinema vivant qui parle aux generations actuelles.
-- 🎭 **Genre comedie** — la comedie rassemble toutes les generations en zone rurale.
-- ⭐ **Note ≥ 6.5/10 sur TMDB** — gage de qualite, valide par des dizaines de milliers de spectateurs.
+- 🥖 **Production française.** Pour ancrer le cinéma dans son territoire.
+- 📅 **Sortie après 1980.** Un cinéma vivant qui parle aux générations actuelles.
+- 🎭 **Genre comédie.** La comédie rassemble toutes les générations en zone rurale.
+- ⭐ **Note ≥ 6.5/10 sur TMDB.** Gage de qualité, validé par des dizaines de milliers de spectateurs.
     """
 )
 
@@ -127,7 +127,7 @@ with s1:
         """<div class="datafix-card">
           <div class="datafix-card-icon">🐍</div>
           <div class="datafix-card-title">Python · Pandas</div>
-          <div class="datafix-card-text">Manipulation des donnees, fusion IMDb / TMDB.</div>
+          <div class="datafix-card-text">Manipulation des données, fusion des sources IMDb et TMDB.</div>
         </div>""",
         unsafe_allow_html=True,
     )
@@ -136,7 +136,7 @@ with s2:
         """<div class="datafix-card">
           <div class="datafix-card-icon">🤖</div>
           <div class="datafix-card-title">scikit-learn</div>
-          <div class="datafix-card-text">TF-IDF + cosine similarity pour le moteur.</div>
+          <div class="datafix-card-text">TF-IDF et similarité cosinus pour le moteur de recommandation.</div>
         </div>""",
         unsafe_allow_html=True,
     )
@@ -145,7 +145,7 @@ with s3:
         """<div class="datafix-card">
           <div class="datafix-card-icon">🎬</div>
           <div class="datafix-card-title">Streamlit · TMDB API</div>
-          <div class="datafix-card-text">Interface multipage et affiches officielles en temps reel.</div>
+          <div class="datafix-card-text">Interface multipage et affiches officielles en temps réel.</div>
         </div>""",
         unsafe_allow_html=True,
     )

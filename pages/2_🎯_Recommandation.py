@@ -18,7 +18,7 @@ with st.sidebar:
     st.markdown("### 🎯 Filtres")
     n_reco = st.slider("Nombre de recommandations", 4, 16, 8, step=1)
     only_well_rated = st.checkbox("Excellence uniquement (≥ 7/10)", value=False)
-    st.caption("Filtre metier : comedies FR post-1980, ≥ 6.5/10.")
+    st.caption("Filtre métier : comédies françaises post-1980, notées 6.5/10 ou plus.")
     st.divider()
 
 df = load_movies()
@@ -27,7 +27,7 @@ if only_well_rated and "vote_average" in df.columns:
 
 hero_header(
     title="Reco<span class='accent-text'>mmandation</span>",
-    subtitle="Comedies francaises post-1980, notees ≥ 6.5/10.",
+    subtitle="Comédies françaises post-1980, notées 6.5/10 ou plus.",
 )
 
 titles = df["title"].dropna().astype(str).sort_values().unique().tolist()
@@ -36,7 +36,7 @@ default_idx = titles.index("Intouchables") if "Intouchables" in titles else 0
 col_sel, col_btn = st.columns([4, 1])
 with col_sel:
     chosen = st.selectbox(
-        "🎬 Choisissez une comedie francaise de reference",
+        "🎬 Choisissez une comédie française de référence",
         titles,
         index=default_idx,
     )
@@ -51,7 +51,7 @@ if not chosen:
 ref = df[df["title"].str.lower() == chosen.lower()].iloc[0]
 
 st.write("")
-st.markdown("### 📽️ Film de reference")
+st.markdown("### 📽️ Film de référence")
 ref_col1, ref_col2 = st.columns([1, 3])
 with ref_col1:
     st.image(poster_url_for_row(ref), use_container_width=True)
@@ -76,10 +76,10 @@ st.divider()
 
 recos = recommend(df, chosen, n=n_reco)
 if recos.empty:
-    st.warning("Pas de recommandation trouvee pour ce film.")
+    st.warning("Pas de recommandation trouvée pour ce film.")
     st.stop()
 
-st.markdown(f"### 🎯 Top {len(recos)} comedies similaires a *{chosen}*")
+st.markdown(f"### 🎯 Top {len(recos)} comédies similaires à *{chosen}*")
 st.write("")
 
 cols_per_row = 4
@@ -110,4 +110,4 @@ for r in range(rows):
                     st.write(row["overview"])
 
 st.write("")
-st.success(f"✅ {len(recos)} recommandations generees en quelques millisecondes.")
+st.success(f"✅ {len(recos)} recommandations générées en quelques millisecondes.")

@@ -45,17 +45,14 @@ team = [
     ("Liliana",  "Team Member",    "Distribution, visualisations et analyses."),
 ]
 
-# Affichage en 5 colonnes égales
 cols = st.columns(5, gap="medium")
 for col, (name, role, mission) in zip(cols, team):
     photo_path = ASSETS / f"photo_{name.lower()}.png"
     with col:
-        # Photo centrée en haut de la carte
         if photo_path.exists():
             sub = st.columns([1, 3, 1])
             with sub[1]:
                 st.image(str(photo_path), use_container_width=True)
-        # Carte texte cohérente avec l'identité visuelle
         st.markdown(
             f"""<div class="datafix-card-clean" style="text-align:center; margin-top:0.5rem;">
               <div class="num">{role.upper()}</div>
@@ -72,23 +69,23 @@ st.divider()
 st.subheader("Notre méthode")
 st.markdown(
     """
-1. **Comprendre le besoin.** Interviews client, étude de marché du cinéma rural en Creuse.
-2. **Définir le positionnement éditorial.** Comédie française post-1980, qualité ≥ 6.5/10.
-3. **Collecter les données.** IMDb (titres, notes) et TMDB (affiches, synopsis, genres).
-4. **Nettoyer et filtrer.** Fusion `tconst` ↔ `tmdb_id`, application des critères métier.
-5. **Modéliser.** TF-IDF (FR) sur genres et synopsis, similarité cosinus.
-6. **Prototyper.** Maquette Figma puis application Streamlit.
-7. **Livrer.** Démonstration au client, documentation reproductible.
+1. **Comprendre le besoin :** échanges avec le client et étude de marché du cinéma rural en Creuse.
+2. **Définir la ligne éditoriale :** comédie française sortie après 1980, notée 6.5/10 ou plus.
+3. **Collecter les données :** titres et notes depuis IMDb, affiches et synopsis depuis TMDB.
+4. **Nettoyer et filtrer :** fusion des deux sources via les identifiants `tconst` et `tmdb_id`, puis application des critères métier.
+5. **Modéliser :** vectorisation TF-IDF en français des genres et synopsis, puis calcul de similarité cosinus.
+6. **Prototyper :** maquette sur Figma, puis développement de l'application Streamlit.
+7. **Livrer :** démonstration au client et documentation pour permettre la reprise du projet.
     """
 )
 
 st.subheader("Critères de sélection du catalogue")
 st.markdown(
     """
-- **Production française.** Pour ancrer le cinéma dans son territoire.
-- **Sortie après 1980.** Un cinéma vivant qui parle aux générations actuelles.
-- **Genre comédie.** La comédie rassemble toutes les générations en zone rurale.
-- **Note ≥ 6.5/10 sur TMDB.** Gage de qualité, validé par des dizaines de milliers de spectateurs.
+- **Production française :** pour ancrer le cinéma dans son territoire et soutenir la création nationale.
+- **Sortie après 1980 :** un cinéma vivant, qui parle directement aux générations d'aujourd'hui.
+- **Genre comédie :** un registre fédérateur, capable de rassembler toutes les générations en zone rurale.
+- **Note minimale de 6.5/10 sur TMDB :** un gage de qualité, validé par des dizaines de milliers de spectateurs.
     """
 )
 

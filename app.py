@@ -19,20 +19,20 @@ LOGO = ASSETS / "logo.png"
 with st.sidebar:
     if LOGO.exists():
         st.image(str(LOGO), use_container_width=True)
-    st.markdown("### 🎬 DATAFIX")
+    st.markdown("### DATAFIX")
     st.caption("Recommandation de comédies françaises pour le cinéma de la Creuse.")
     st.divider()
     st.markdown(
         "**Navigation**\n\n"
-        "- 🏠 Accueil\n"
-        "- 🎯 Recommandation\n"
-        "- 📊 Statistiques\n"
-        "- ℹ️ À propos"
+        "- Accueil\n"
+        "- Recommandation\n"
+        "- Statistiques\n"
+        "- À propos"
     )
     st.divider()
     st.caption("v0.2 · Sprint 4 · 2026")
 
-# --- HERO : logo image au lieu du texte ------------------------------ #
+# --- HERO : grand logo image ---------------------------------------- #
 hero_l, hero_c, hero_r = st.columns([1, 2, 1])
 with hero_c:
     if LOGO.exists():
@@ -61,42 +61,41 @@ st.markdown(
 )
 
 st.write("")
+st.write("")
 
 col1, col2, col3 = st.columns(3, gap="large")
 with col1:
     st.markdown(
-        """<div class="datafix-card">
-            <div class="datafix-card-icon">🥖</div>
-            <div class="datafix-card-title">100% comédie française</div>
-            <div class="datafix-card-text">
-                Catalogue trié sur le volet, uniquement des comédies françaises
-                sorties <strong>après 1980</strong>, avec une note minimale de
-                <strong>6.5/10</strong>.
+        """<div class="datafix-card-clean">
+            <div class="num">01 / Catalogue</div>
+            <div class="title">Comédies françaises uniquement</div>
+            <div class="text">
+                Une sélection rigoureuse de comédies françaises sorties après 1980,
+                toutes notées au minimum 6.5/10 sur TMDB.
             </div>
         </div>""",
         unsafe_allow_html=True,
     )
 with col2:
     st.markdown(
-        """<div class="datafix-card">
-            <div class="datafix-card-icon">🎞️</div>
-            <div class="datafix-card-title">Affiches officielles</div>
-            <div class="datafix-card-text">
-                Toutes les affiches sont récupérées en direct depuis l'API
-                <strong>TMDB</strong> pour une expérience visuelle premium.
+        """<div class="datafix-card-clean">
+            <div class="num">02 / Visuel</div>
+            <div class="title">Affiches officielles</div>
+            <div class="text">
+                Toutes les affiches sont récupérées en direct depuis l'API TMDB
+                pour une expérience visuelle premium et toujours à jour.
             </div>
         </div>""",
         unsafe_allow_html=True,
     )
 with col3:
     st.markdown(
-        """<div class="datafix-card">
-            <div class="datafix-card-icon">🎯</div>
-            <div class="datafix-card-title">Reco ciblée</div>
-            <div class="datafix-card-text">
-                Choisissez <em>Intouchables</em>, <em>Amélie</em> ou
-                <em>Astérix</em>, l'algorithme propose en un clin d'œil les
-                comédies les plus proches.
+        """<div class="datafix-card-clean">
+            <div class="num">03 / Algorithme</div>
+            <div class="title">Recommandation ciblée</div>
+            <div class="text">
+                Choisissez Intouchables, Amélie ou Astérix : l'algorithme propose
+                en un clin d'œil les comédies les plus proches.
             </div>
         </div>""",
         unsafe_allow_html=True,
@@ -107,13 +106,13 @@ st.write("")
 
 cta_l, cta_c, cta_r = st.columns([1, 2, 1])
 with cta_c:
-    if st.button("🎬 Démarrer une recommandation", use_container_width=True, type="primary"):
+    if st.button("Démarrer une recommandation", use_container_width=True, type="primary"):
         st.switch_page("pages/2_🎯_Recommandation.py")
 
 st.write("")
 st.divider()
 
-st.markdown("#### 🔢 En quelques chiffres")
+st.markdown("#### En quelques chiffres")
 m1, m2, m3, m4 = st.columns(4)
 m1.metric("Comédies sélectionnées", "30", "≥ 6.5/10")
 m2.metric("Période", "1980 à 2019", "")

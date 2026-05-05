@@ -41,28 +41,30 @@ st.markdown(
 )
 
 st.write("")
-st.subheader("🎬 Que pouvez-vous faire ici ?")
+st.write("")
+st.subheader("Que pouvez-vous faire ici ?")
+st.write("")
 
 c1, c2, c3 = st.columns(3, gap="large")
 with c1:
     st.markdown(
-        """<div class="datafix-card">
-          <div class="datafix-card-icon">🎯</div>
-          <div class="datafix-card-title">Recommander une comédie</div>
-          <div class="datafix-card-text">
-            Choisissez <em>Intouchables</em>, <em>Amélie Poulain</em>,
-            <em>Astérix</em>… vous obtenez instantanément 8 comédies françaises
-            proches, avec leurs affiches et synopsis officiels.
+        """<div class="datafix-card-clean">
+          <div class="num">01 / Recommandation</div>
+          <div class="title">Recommander une comédie</div>
+          <div class="text">
+            Choisissez Intouchables, Amélie Poulain, Astérix… vous obtenez
+            instantanément 8 comédies françaises proches, avec leurs affiches
+            et synopsis officiels.
           </div>
         </div>""",
         unsafe_allow_html=True,
     )
 with c2:
     st.markdown(
-        """<div class="datafix-card">
-          <div class="datafix-card-icon">📊</div>
-          <div class="datafix-card-title">Explorer le catalogue FR</div>
-          <div class="datafix-card-text">
+        """<div class="datafix-card-clean">
+          <div class="num">02 / Catalogue</div>
+          <div class="title">Explorer le catalogue FR</div>
+          <div class="text">
             30 comédies françaises iconiques, toutes notées 6.5/10 ou plus.
             Répartition par décennie, classement, top des mieux notées.
           </div>
@@ -71,10 +73,10 @@ with c2:
     )
 with c3:
     st.markdown(
-        """<div class="datafix-card">
-          <div class="datafix-card-icon">ℹ️</div>
-          <div class="datafix-card-title">À propos</div>
-          <div class="datafix-card-text">
+        """<div class="datafix-card-clean">
+          <div class="num">03 / Équipe</div>
+          <div class="title">À propos</div>
+          <div class="text">
             Découvrez l'équipe DATAFIX, la méthodologie de sélection et la
             stack technique (Python, scikit-learn, Streamlit, TMDB).
           </div>
@@ -83,5 +85,6 @@ with c3:
     )
 
 st.write("")
-if st.button("🎬 Démarrer une recommandation", use_container_width=True, type="primary"):
+st.write("")
+if st.button("Démarrer une recommandation", use_container_width=True, type="primary"):
     st.switch_page("pages/2_🎯_Recommandation.py")

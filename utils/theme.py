@@ -160,6 +160,53 @@ def inject_global_css() -> None:
             line-height: 1.55;
         }}
 
+
+        /* ---------- Cartes numérotées style éditorial ---------- */
+        .datafix-card-clean {{
+            background: linear-gradient(180deg, #16161A 0%, #101013 100%);
+            border: 1px solid #2A2A30;
+            border-radius: 16px;
+            padding: 1.6rem 1.4rem 1.5rem;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: transform .15s ease, border-color .15s ease;
+        }}
+        .datafix-card-clean::before {{
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 3px;
+            background: #F5C518;
+            opacity: 0.85;
+        }}
+        .datafix-card-clean:hover {{
+            transform: translateY(-3px);
+            border-color: #F5C518;
+        }}
+        .datafix-card-clean .num {{
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #F5C518;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }}
+        .datafix-card-clean .title {{
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }}
+        .datafix-card-clean .text {{
+            color: #C4C4CC;
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }}
+
         /* ---------- Carte film (résultats reco) ---------- */
         .movie-card {{
             background: {COLORS["bg_card"]};

@@ -1,20 +1,6 @@
 # 🚀 Guide pas-à-pas — DATAFIX Streamlit
 
-> Ce guide reprend **exactement** les étapes de l'énoncé du Sprint 4. Tu peux le suivre du début à la fin, en copiant les blocs de code dans ton terminal. Tout est déjà prêt dans le dossier `DATAFIX-Streamlit/` que je t'ai créé.
-
----
-
-## ✅ Étape 0 — Pré-requis
-
-| Outil | Pourquoi | Installation |
-|-------|----------|--------------|
-| **Python 3.10+** | Faire tourner Streamlit | <https://www.python.org/downloads/> |
-| **Git** | Versionner le projet | <https://git-scm.com/downloads> |
-| **VS Code** (recommandé) | Éditer le code | <https://code.visualstudio.com/> |
-| **Compte GitHub** | Hébergement du repo | <https://github.com/signup> |
-| **Clé API TMDB** (optionnel) | Affiches en direct | <https://www.themoviedb.org/settings/api> |
-
-Vérifie que Python est bien installé :
+> Ce guide reprend **exactement** les étapes de l'énoncé du Sprint 4
 ```bash
 python --version
 # ou
@@ -23,12 +9,6 @@ python3 --version
 
 ---
 
-## 🎨 Étape 1 — La maquette
-
-> **Bonne nouvelle :** ta maquette Figma est déjà faite ✅
-> Lien : [Maquette DATAFIX – Figma Make](https://www.figma.com/make/uqyMucZ3CHStLNQEpuaUq0/Maquette-DATAFIX?p=f&fullscreen=1)
-
-L'app que je t'ai codée respecte la maquette :
 - **Fond noir cinéma** (`#0E0E10`) + **accents jaune doré** (`#F5C518`) — exactement le code couleur du logo DATAFIX.
 - **Pages :** Accueil · Recommandation · Statistiques · À propos.
 - **Logo DATAFIX** affiché dans la sidebar de chaque page.
@@ -38,16 +18,16 @@ L'app que je t'ai codée respecte la maquette :
 
 | Page | Responsable | Rôle |
 |------|-------------|------|
-| 🏠 Accueil | … | Pitch, CTA, chiffres clés |
-| 🎯 Recommandation | … | Sélection film + grille de résultats |
-| 📊 Statistiques | … | Tableaux de bord catalogue |
-| ℹ️ À propos | … | Équipe, méthodo, stack |
+|  Accueil | … | Pitch, CTA, chiffres clés |
+|  Recommandation | … | Sélection film + grille de résultats |
+|  Statistiques | … | Tableaux de bord catalogue |
+|  À propos | … | Équipe, méthodo, stack |
 
 ---
 
-## 🏗️ Étape 2 — Mise en place de la structure technique
+## Étape 2 — Mise en place de la structure technique
 
-### 2.1 — L'arborescence (déjà créée)
+### 2.1 — L'arborescence
 
 ```
 DATAFIX-Streamlit/
@@ -111,7 +91,7 @@ source .venv/bin/activate     # ou .venv\Scripts\activate sur Windows
 uv pip install -r requirements.txt
 ```
 
-### 2.3 — (Optionnel) Configurer la clé API TMDB
+### 2.3 — Configurer la clé API TMDB
 
 ```bash
 # Copier le modèle

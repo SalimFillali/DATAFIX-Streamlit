@@ -89,15 +89,6 @@ L'application accepte deux modes :
 - **scikit-learn** (TF-IDF, cosine similarity)
 - **TMDB API** (affiches officielles)
 
-## 👥 Équipe
-
-| Membre  | Rôle           | Périmètre                     |
-| ------- | -------------- | ----------------------------- |
-| Salim   | Data Engineer  | Dataset, ETL, intégration     |
-| Gatien  | Data Analyst   | TMDB, posters                 |
-| Jade    | Data Analyst   | NLP, mots-clés                |
-| Liliana | Data Analyst   | Distribution, visualisations  |
-
 ## 📜 Licence
 
 Projet pédagogique – usage non commercial. Données issues d'IMDb et TMDB

@@ -103,7 +103,6 @@ for r in range(rows):
                     sub_bits.append(str(year_val))
             if "vote_average" in row and str(row["vote_average"]) not in ("nan", "None", ""):
                 sub_bits.append(f"⭐ {float(row['vote_average']):.1f}")
-            sub_bits.append(f"sim. {row['similarity']*100:.0f}%")
             st.caption(" · ".join(sub_bits))
             if "overview" in row and str(row["overview"]) not in ("nan", "None", ""):
                 with st.expander("Synopsis"):

@@ -65,7 +65,7 @@ with c2:
           <div class="num">02 / Catalogue</div>
           <div class="title">Explorer le catalogue FR</div>
           <div class="text">
-            30 comédies françaises iconiques, toutes notées 6.5/10 ou plus.
+            322 comédies françaises sélectionnées, toutes notées 6.5/10 ou plus.
             Répartition par décennie, classement, top des mieux notées.
           </div>
         </div>""",

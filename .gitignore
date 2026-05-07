@@ -26,10 +26,11 @@ ENV/
 .streamlit/secrets.toml
 
 # --- Données volumineuses ---------------------------------------------------
-# On versionne le code mais PAS les gros datasets.
-data/*.csv
+# On versionne le code et le catalogue final, mais pas les gros datasets bruts.
 data/*.parquet
 data/*.xlsx
+data/raw_*.csv
+!data/movies_final.csv
 !data/.gitkeep
 
 # --- Notebooks Jupyter ------------------------------------------------------

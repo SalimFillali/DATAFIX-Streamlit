@@ -114,9 +114,9 @@ st.divider()
 
 st.markdown("#### En quelques chiffres")
 m1, m2, m3, m4 = st.columns(4)
-m1.metric("Comédies sélectionnées", "322", "≥ 6.5/10")
+m1.metric("Comédies sélectionnées", "535", "≥ 6.5/10")
 m2.metric("Période", "1980 à 2026", "")
-m3.metric("Note moyenne", "6.9", "/10")
+m3.metric("Note moyenne", "7.0", "/10")
 m4.metric("Algorithme", "Cosine", "TF-IDF")
 
 st.write("")
